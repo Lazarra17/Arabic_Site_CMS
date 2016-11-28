@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" /> 
     <link rel="icon" href="http://www.asiatravel.com/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="http://www.asiatravel.net/common/style/jquery-ui.min.css" />      
-    <link href="http://lazarra17.comuf.com/arabic/style.css" rel="stylesheet" /> 
+    <link href="css/style.css" rel="stylesheet" /> 
+    <!--
+    <link href="http://lazarra17.comuf.com/arabic/style.css" rel="stylesheet" />  
+    -->
     <link rel="alternate" media="only screen and (max-width: 768px)" href="http://m.asiatravel.com/hotellanding.aspx?lan=en-US">
     <title>Asiatravel.com | UAE Asiatravel</title>
 
@@ -829,14 +832,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                      <div class="row" style="margin-top: 20px;">
                              <div class="col-lg-6 col-md-6 col-xs-6">
                                 <div class="form-group">
-
-                                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input type="text" id="inputFHTDepartureCity" class="form-control" placeholder="مدينة الانطلاق" />
+                                       <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                                       <input type="text" class="form-control ui-autocomplete-input" id="inputFHTDepartureCity" placeholder="مدينة الانطلاق" autocomplete="off">
                                 </div>
                              </div>
-                             
                              <div class="col-lg-6 col-md-6 col-xs-6">
                                 <div class="form-group">
-                                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input type="text" class="form-control ui-autocomplete-input" id="inputFHTArrivalCity"  placeholder="مدينة الوصول" />
+                                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                                    <input type="text" class="form-control ui-autocomplete-input" id="inputFHTArrivalCity" placeholder="مدينة الوصول" autocomplete="off">
+                                     
                                 </div>
                              </div>
                              
@@ -863,11 +867,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                 <div class="panel panel-default">
                                     <div class="panel-heading"><p class="htl-room">تفاصيل الغرفة</p></div>
                                     <div class="panel-body">
-                                        <div class="row">
+                                        <div class="row" id="FHTRoom1">
                                                 <div class="col-lg-3 col-md-3 col-xs-3">
                                                     <h4 class="option-size">غرف</h4>
                                                         <div class="form-group">
-                                                            <select class="form-control" id="inputFHTRoomCount">
+                                                             <select class="form-control" id="inputFHTRoomCount">
                                                                 <option value="1" selected="">1</option>
                                                                 <option value="2">2</option>
                                                                 <option value="3">3</option>
@@ -876,7 +880,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                             </select>
                                                         </div>
                                                 </div> 
-                                                
+                                                <!--Room 1-->
                                                 <div class="col-lg-3 col-md-3 col-xs-3">
                                                     <h4 class="option-size">بالغ</h4>
                                                         <div class="form-group">
@@ -885,13 +889,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                                 <option value="2" selected="">2</option>
                                                                 <option value="3">3</option>
                                                                 <option value="4">4</option>
-                                                            </select> 
+                                                            </select>
                                                         </div>
                                                 </div>
                                                 
                                                 <div class="col-lg-4 col-md-4 col-xs-4">
                                                     <h4 class="option-size">قاصر (٢-١١ سنة)</h4>
-                                                        <div class="form-group">
+                                                        <div class="form-group">             
                                                             <select class="form-control" id="inputFHTRoom1ChildWithBed" onchange="validatechildagetextbox(
                                                             'WB', 
                                                             'inputFHTRoom1Adult', 
@@ -926,16 +930,397 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                 
                                                     <h4 class="option-size">العمر</h4>
                                                         <div class="form-group">
-                                                            <input type="text" id="withBedAge" disabled="" class="form-control" />
-                                                            <input type="text" id="withoutBedAge" disabled="" class="form-control" />
+                                                            <input type="text" class="form-control" id="inputFHTRoom1ChildWithBedAge" disabled="">
+                                                            <input type="text" class="form-control hidden" id="inputFHTRoom1ChildWithBedAge1">
+                                                            
+                                                            <input type="text" class="form-control" id="inputFHTRoom1ChildWithOutBedAge" disabled="">
+                                                            <input type="text" class="form-control hidden" id="inputFHTRoom1ChildWithOutBedAge1"> 
                                                         </div>
                                                     
                                                 
                                                 
                                                 </div>
                                                 
+                                                
+                                                <script type="text/javascript">
+                                					setTimeout("validatechildagetextbox('WB'," +
+                                								"'inputFHTRoom1Adult'," +
+                                								"'inputFHTRoom1ChildWithBed'," +
+                                								"'inputFHTRoom1ChildWithOutBed'," +
+                                								"'inputFHTRoom1ChildWithOutBedAge'," +
+                                								"'inputFHTRoom1ChildWithBedAge'," +
+                                								"'inputFHTRoom1ChildWithBedAge1'," +
+                                								"'inputFHTRoom1ChildWithBedAge1TR')", 100);
+                                				
+                                					setTimeout("validatechildagetextbox('WoB'," +
+                                								"'inputFHTRoom1Adult'," +
+                                								"'inputFHTRoom1ChildWithBed'," +
+                                								"'inputFHTRoom1ChildWithOutBed'," +
+                                								"'inputFHTRoom1ChildWithOutBedAge'," +
+                                								"'inputFHTRoom1ChildWithOutBedAge'," +
+                                								"'inputFHTRoom1ChildWithOutBedAge1'," +
+                                								"'inputFHTRoom1ChildWithOutBedAge1TR')", 100);
+                                				
+                                					setTimeout("validateAdultwithChild('inputFHTRoom1Adult'," +
+                                								"'inputFHTRoom1ChildWithBed'," +
+                                								"'inputFHTRoom1ChildWithBedAge'," +
+                                								"'inputFHTRoom1ChildWithOutBed'," +
+                                								"'inputFHTRoom1ChildWithOutBedAge'," +
+                                								"'True')", 100);
+                                				</script>
+                                                
+                                                   <!-- Room 2 -->
+                  <div class="row" id="FHTRoom2" style="display:none">
+                    <div class="form-group col-lg-2 col-md-2">
+                        <label>&nbsp;</label>
+                    </div>
+                    <!-- Room 2 -->
+                    <div class="form-group col-lg-2 col-md-2">
+                        <h5>Room 2</h5>
+                    </div>
+                    <div class="form-group col-lg-2 col-md-2">
+                    	<label for="inputFHTRoom1Adult" class="visible-xs">Adult</label>
+                        <select class="form-control" id="inputFHTRoom2Adult" onchange="validateAdultwithChild('inputFHTRoom2Adult', 'inputFHTRoom2ChildWithBed', 'inputFHTRoom2ChildWithBedAge','inputFHTRoom2ChildWithOutBed','inputFHTRoom2ChildWithOutBedAge','True')">
+                            <option value="1">1</option>
+                            <option value="2" selected="">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>                                                  
+                    </div>
+                    <div class="form-group col-lg-4 col-md-4 col-xs-9">
+                      	<label for="inputFHTRoom2ChildWithBed" class="visible-xs visible-sm ">Child (2-11 yrs old)</label>
+                        <select class="form-control" id="inputFHTRoom2ChildWithBed" onchange="validatechildagetextbox(
+                        'WB', 
+                        'inputFHTRoom2Adult', 
+                        'inputFHTRoom2ChildWithBed', 
+                        'inputFHTRoom2ChildWithOutBed', 
+                        'inputFHTRoom2ChildWithOutBedAge', 
+                        'inputFHTRoom2ChildWithBedAge', 
+                        'inputFHTRoom2ChildWithBedAge1', 
+                        'inputFHTRoom2ChildWithBedAge1TR')">
+                            <option value="0" selected="">0 - with bed</option>
+                            <option value="1">1 - with bed</option>
+                        </select>    
+                   		<div class="clearfix visible-lg visible-md visible-xs visible-sm">&nbsp;</div>  
+                        <select class="form-control" id="inputFHTRoom2ChildWithOutBed" onchange="validatechildagetextbox(
+                        'WoB', 
+                        'inputFHTRoom2Adult',
+                        'inputFHTRoom2ChildWithBed', 
+                        'inputFHTRoom2ChildWithOutBed', 
+                        'inputFHTRoom2ChildWithOutBedAge',
+                        'inputFHTRoom2ChildWithOutBedAge', 
+                        'inputFHTRoom2ChildWithOutBedAge1', 
+                        'inputFHTRoom2ChildWithOutBedAge1TR')">
+                            <option value="0" selected="">0 - without bed</option>
+                            <option value="1">1 - without bed</option>
+                        </select>                                                  
+                      </div>
+                    <div class="form-group col-lg-2 col-md-2 col-xs-3">
+                	<label for="inputFHRoom2ChildWithBedAge" class="visible-xs visible-sm">Age</label>
+                    <input type="text" class="form-control" id="inputFHTRoom2ChildWithBedAge" disabled="">
+                    <div id="inputFHTRoom2ChildWithBedAge1TR">
+                        <input type="text" class="form-control hidden" id="inputFHTRoom2ChildWithBedAge1">    
+                    </div>
+                    <div class="clearfix visible-lg visible-md visible-xs visible-sm">&nbsp;</div>  
+                    <input type="text" class="form-control" id="inputFHTRoom2ChildWithOutBedAge" disabled=""> 
+                    <div id="inputFHTRoom2ChildWithOutBedAge1TR" class="hidden">
+                        <input type="text" class="form-control hidden" id="inputFHTRoom2ChildWithOutBedAge1">   
+                    </div>
+                  </div> 
+                  </div>
+                  <script type="text/javascript">
+					setTimeout("validatechildagetextbox('WB'," +
+								"'inputFHTRoom1Adult'," +
+								"'inputFHTRoom2ChildWithBed'," +
+								"'inputFHTRoom2ChildWithOutBed'," +
+								"'inputFHTRoom2ChildWithOutBedAge'," +
+								"'inputFHTRoom2ChildWithBedAge'," +
+								"'inputFHTRoom2ChildWithBedAge1'," +
+								"'inputFHTRoom2ChildWithBedAge1TR')", 100);
+				
+					setTimeout("validatechildagetextbox('WoB'," +
+								"'inputFHTRoom2Adult'," +
+								"'inputFHTRoom2ChildWithBed'," +
+								"'inputFHTRoom2ChildWithOutBed'," +
+								"'inputFHTRoom2ChildWithOutBedAge'," +
+								"'inputFHTRoom2ChildWithOutBedAge'," +
+								"'inputFHTRoom2ChildWithOutBedAge1'," +
+								"'inputFHTRoom2ChildWithOutBedAge1TR')", 100);
+				
+					setTimeout("validateAdultwithChild('inputFHTRoom2Adult'," +
+								"'inputFHTRoom2ChildWithBed'," +
+								"'inputFHTRoom2ChildWithBedAge'," +
+								"'inputFHTRoom2ChildWithOutBed'," +
+								"'inputFHTRoom2ChildWithOutBedAge'," +
+								"'True')", 100);
+				</script>
+                
+                
+                 <!-- Room 3 -->
+                  <div class="row" id="FHTRoom3" style="display:none">
+                    <div class="form-group col-lg-2 col-md-2">
+                        <label>&nbsp;</label>
+                    </div>
+                    <!-- Room 3 -->
+                    <div class="form-group col-lg-2 col-md-2">
+                        
+                        <h5>Room 3</h5>
+                    </div>
+                    <div class="form-group col-lg-2 col-md-2">     
+                    	<label for="inputFHTRoom1Adult" class="visible-xs">Adult</label>
+                        <select class="form-control" id="inputFHTRoom3Adult" onchange="validateAdultwithChild('inputFHTRoom3Adult', 'inputFHTRoom3ChildWithBed', 'inputFHTRoom3ChildWithBedAge','inputFHTRoom3ChildWithOutBed','inputFHTRoom3ChildWithOutBedAge','True')">
+                            <option value="1">1</option>
+                            <option value="2" selected="">2</option>
+
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>                                                  
+                    </div>
+                    <div class="form-group col-lg-4 col-md-4 col-xs-9">
+                        <label for="inputFHTRoom3ChildWithBed" class="visible-xs visible-sm ">Child (2-11 yrs old)</label>
+                        <select class="form-control" id="inputFHTRoom3ChildWithBed" onchange="validatechildagetextbox(
+                        'WB', 
+                        'inputFHTRoom3Adult', 
+                        'inputFHTRoom3ChildWithBed', 
+                        'inputFHTRoom3ChildWithOutBed', 
+                        'inputFHTRoom3ChildWithOutBedAge', 
+                        'inputFHTRoom3ChildWithBedAge', 
+                        'inputFHTRoom3ChildWithBedAge1', 
+                        'inputFHTRoom3ChildWithBedAge1TR')">
+                            <option value="0" selected="">0 - with bed</option>
+                            <option value="1">1 - with bed</option>
+                        </select>    
+                   		<div class="clearfix visible-lg visible-md visible-xs visible-sm">&nbsp;</div>  
+                        <select class="form-control" id="inputFHTRoom3ChildWithOutBed" onchange="validatechildagetextbox(
+                        'WoB', 
+                        'inputFHTRoom3Adult',
+                        'inputFHTRoom3ChildWithBed', 
+                        'inputFHTRoom3ChildWithOutBed', 
+                        'inputFHTRoom3ChildWithOutBedAge',
+                        'inputFHTRoom3ChildWithOutBedAge', 
+                        'inputFHTRoom3ChildWithOutBedAge1', 
+                        'inputFHTRoom3ChildWithOutBedAge1TR')">
+                            <option value="0" selected="">0 - without bed</option>
+                            <option value="1">1 - without bed</option>
+                        </select>                                                  
+                      </div>
+                    <div class="form-group col-lg-2 col-md-2 col-xs-3">
+                   <label for="inputFHRoom3ChildWithBedAge" class="visible-xs visible-sm">Age</label>
+                    <input type="text" class="form-control" id="inputFHTRoom3ChildWithBedAge" disabled="">
+                    <div id="inputFHTRoom3ChildWithBedAge1TR">
+                        <input type="text" class="form-control hidden" id="inputFHTRoom3ChildWithBedAge1">    
+                    </div>
+                    <div class="clearfix visible-lg visible-md visible-xs visible-sm">&nbsp;</div>  
+                    <input type="text" class="form-control" id="inputFHTRoom3ChildWithOutBedAge" disabled=""> 
+                    <div id="inputFHTRoom3ChildWithOutBedAge1TR" class="hidden">
+                        <input type="text" class="form-control hidden" id="inputFHTRoom3ChildWithOutBedAge1">   
+                    </div>
+                  </div> 
+                  </div>
+                  <script type="text/javascript">
+					setTimeout("validatechildagetextbox('WB'," +
+								"'inputFHTRoom3Adult'," +
+								"'inputFHTRoom3ChildWithBed'," +
+								"'inputFHTRoom3ChildWithOutBed'," +
+								"'inputFHTRoom3ChildWithOutBedAge'," +
+								"'inputFHTRoom3ChildWithBedAge'," +
+								"'inputFHTRoom3ChildWithBedAge1'," +
+								"'inputFHTRoom3ChildWithBedAge1TR')", 100);
+				
+					setTimeout("validatechildagetextbox('WoB'," +
+								"'inputFHTRoom3Adult'," +
+								"'inputFHTRoom3ChildWithBed'," +
+								"'inputFHTRoom3ChildWithOutBed'," +
+								"'inputFHTRoom3ChildWithOutBedAge'," +
+								"'inputFHTRoom3ChildWithOutBedAge'," +
+								"'inputFHTRoom3ChildWithOutBedAge1'," +
+								"'inputFHTRoom3ChildWithOutBedAge1TR')", 100);
+				
+					setTimeout("validateAdultwithChild('inputFHTRoom3Adult'," +
+								"'inputFHTRoom3ChildWithBed'," +
+								"'inputFHTRoom3ChildWithBedAge'," +
+								"'inputFHTRoom3ChildWithOutBed'," +
+								"'inputFHTRoom3ChildWithOutBedAge'," +
+								"'True')", 100);
+				</script>
+                
+                 <!-- Room 4 -->
+                  <div class="row" id="FHTRoom4" style="display:none">
+                    <div class="form-group col-lg-2 col-md-2">
+                        <label>&nbsp;</label>
+                    </div>
+                    <!-- Room 4 -->
+                    <div class="form-group col-lg-2 col-md-2">
+                        <h5>Room 4</h5>
+                    </div>
+                    <div class="form-group col-lg-2 col-md-2">
+                    	<label for="inputFHTRoom1Adult" class="visible-xs">Adult</label>
+                        <select class="form-control" id="inputFHTRoom4Adult" onchange="validateAdultwithChild('inputFHTRoom4Adult', 'inputFHTRoom4ChildWithBed', 'inputFHTRoom4ChildWithBedAge','inputFHTRoom4ChildWithOutBed','inputFHTRoom4ChildWithOutBedAge','True')">
+                            <option value="1">1</option>
+                            <option value="2" selected="">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>                                                  
+                    </div>
+                    <div class="form-group col-lg-4 col-md-4 col-xs-9">
+                    	<label for="inputFHTRoom4ChildWithBed" class="visible-xs visible-sm ">Child (2-11 yrs old)</label>
+                        <select class="form-control" id="inputFHTRoom4ChildWithBed" onchange="validatechildagetextbox(
+                        'WB', 
+                        'inputFHTRoom1Adult', 
+                        'inputFHTRoom4ChildWithBed', 
+                        'inputFHTRoom4ChildWithOutBed', 
+                        'inputFHTRoom4ChildWithOutBedAge', 
+                        'inputFHTRoom4ChildWithBedAge', 
+                        'inputFHTRoom4ChildWithBedAge1', 
+                        'inputFHTRoom4ChildWithBedAge1TR')">
+                            <option value="0" selected="">0 - with bed</option>
+                            <option value="1">1 - with bed</option>
+                        </select>    
+                   		<div class="clearfix visible-lg visible-md visible-xs visible-sm">&nbsp;</div>  
+                        <select class="form-control" id="inputFHTRoom4ChildWithOutBed" onchange="validatechildagetextbox(
+                        'WoB', 
+                        'inputFHTRoom4Adult',
+                        'inputFHTRoom4ChildWithBed', 
+                        'inputFHTRoom4ChildWithOutBed', 
+                        'inputFHTRoom4ChildWithOutBedAge',
+                        'inputFHTRoom4ChildWithOutBedAge', 
+                        'inputFHTRoom4ChildWithOutBedAge1', 
+                        'inputFHTRoom4ChildWithOutBedAge1TR')">
+                            <option value="0" selected="">0 - without bed</option>
+                            <option value="1">1 - without bed</option>
+                        </select>                                                  
+                      </div>
+                    <div class="form-group col-lg-2 col-md-2 col-xs-3">
+                    	<label for="inputFHRoom4ChildWithBedAge" class="visible-xs visible-sm">Age</label>
+                        <input type="text" class="form-control" id="inputFHTRoom4ChildWithBedAge" disabled="">
+                    		<div id="inputFHTRoom4ChildWithBedAge1TR">
+                        		<input type="text" class="form-control hidden" id="inputFHTRoom4ChildWithBedAge1">    
+                    		</div>
+                    	<div class="clearfix visible-lg visible-md visible-xs visible-sm">&nbsp;</div>  
+                    	<input type="text" class="form-control" id="inputFHTRoom4ChildWithOutBedAge" disabled=""> 
+                    		<div id="inputFHTRoom4ChildWithOutBedAge1TR" class="hidden">
+                        		<input type="text" class="form-control hidden" id="inputFHTRoom4ChildWithOutBedAge1">   
+                    		</div>
+                    </div> 
+                  </div>
+                  <script type="text/javascript">
+					setTimeout("validatechildagetextbox('WB'," +
+								"'inputFHTRoom4Adult'," +
+								"'inputFHTRoom4ChildWithBed'," +
+								"'inputFHTRoom4ChildWithOutBed'," +
+								"'inputFHTRoom4ChildWithOutBedAge'," +
+								"'inputFHTRoom4ChildWithBedAge'," +
+								"'inputFHTRoom4ChildWithBedAge1'," +
+								"'inputFHTRoom4ChildWithBedAge1TR')", 100);
+				
+					setTimeout("validatechildagetextbox('WoB'," +
+								"'inputFHTRoom4Adult'," +
+								"'inputFHTRoom4ChildWithBed'," +
+								"'inputFHTRoom4ChildWithOutBed'," +
+								"'inputFHTRoom4ChildWithOutBedAge'," +
+								"'inputFHTRoom4ChildWithOutBedAge'," +
+								"'inputFHTRoom4ChildWithOutBedAge1'," +
+								"'inputFHTRoom4ChildWithOutBedAge1TR')", 100);
+				
+					setTimeout("validateAdultwithChild('inputFHTRoom4Adult'," +
+								"'inputFHTRoom4ChildWithBed'," +
+								"'inputFHTRoom4ChildWithBedAge'," +
+								"'inputFHTRoom4ChildWithOutBed'," +
+								"'inputFHTRoom4ChildWithOutBedAge'," +
+								"'True')", 100);
+				</script>
+                
+                 <!-- Room 5 -->
+                  <div class="row" id="FHTRoom5" style="display:none">
+                    <div class="form-group col-lg-2 col-md-2">
+                        <label>&nbsp;</label>
+                    </div>
+                    <!-- Room 5 -->
+                    <div class="form-group col-lg-2 col-md-2">
+                        <h5>Room 5</h5>
+                    </div>
+                    <div class="form-group col-lg-2 col-md-2">
+                    	<label for="inputFHTRoom1Adult" class="visible-xs">Adult</label>
+                        <select class="form-control" id="inputFHTRoom5Adult" onchange="validateAdultwithChild('inputFHTRoom5Adult', 'inputFHTRoom5ChildWithBed', 'inputFHTRoom5ChildWithBedAge','inputFHTRoom5ChildWithOutBed','inputFHTRoom5ChildWithOutBedAge','True')">
+                            <option value="1">1</option>
+                            <option value="2" selected="">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>                                                  
+                    </div>
+                    <div class="form-group col-lg-4 col-md-4 col-xs-9">
+                    	<label for="inputFHTRoom5ChildWithBed" class="visible-xs visible-sm ">Child (2-11 yrs old)</label>
+                        <select class="form-control" id="inputFHTRoom5ChildWithBed" onchange="validatechildagetextbox(
+                        'WB', 
+                        'inputFHTRoom5Adult', 
+                        'inputFHTRoom5ChildWithBed', 
+                        'inputFHTRoom5ChildWithOutBed', 
+                        'inputFHTRoom5ChildWithOutBedAge', 
+                        'inputFHTRoom5ChildWithBedAge', 
+                        'inputFHTRoom5ChildWithBedAge1', 
+                        'inputFHTRoom5ChildWithBedAge1TR')">
+                            <option value="0" selected="">0 - with bed</option>
+                            <option value="1">1 - with bed</option>
+                        </select>    
+                        <div class="clearfix visible-lg visible-md visible-xs visible-sm">&nbsp;</div>  
+
+                        <select class="form-control" id="inputFHTRoom5ChildWithOutBed" onchange="validatechildagetextbox(
+                        'WoB', 
+                        'inputFHTRoom5Adult',
+                        'inputFHTRoom5ChildWithBed', 
+                        'inputFHTRoom5ChildWithOutBed', 
+                        'inputFHTRoom5ChildWithOutBedAge',
+                        'inputFHTRoom5ChildWithOutBedAge', 
+                        'inputFHTRoom5ChildWithOutBedAge1', 
+                        'inputFHTRoom5ChildWithOutBedAge1TR')">
+                            <option value="0" selected="">0 - without bed</option>
+                            <option value="1">1 - without bed</option>
+                        </select>                                                  
+                      </div>
+                    <div class="form-group col-lg-2 col-md-2 col-xs-3">
+                    	<label for="inputFHRoom5ChildWithBedAge" class="visible-xs visible-sm">Age</label>
+                        <input type="text" class="form-control" id="inputFHTRoom5ChildWithBedAge" disabled="">
+                        <div id="inputFHTRoom5ChildWithBedAge1TR">
+                            <input type="text" class="form-control hidden" id="inputFHTRoom5ChildWithBedAge1">    
+                        </div>
+                        <div class="clearfix visible-lg visible-md visible-xs visible-sm">&nbsp;</div>  
+                        <input type="text" class="form-control" id="inputFHTRoom5ChildWithOutBedAge" disabled=""> 
+                        <div id="inputFHTRoom5ChildWithOutBedAge1TR" class="hidden">
+                            <input type="text" class="form-control hidden" id="inputFHTRoom5ChildWithOutBedAge1">   
+                        </div>
+                    </div> 
+                  </div>
+                  <script type="text/javascript">
+					setTimeout("validatechildagetextbox('WB'," +
+								"'inputFHTRoom5Adult'," +
+								"'inputFHTRoom5ChildWithBed'," +
+								"'inputFHTRoom5ChildWithOutBed'," +
+								"'inputFHTRoom5ChildWithOutBedAge'," +
+								"'inputFHTRoom5ChildWithBedAge'," +
+								"'inputFHTRoom5ChildWithBedAge1'," +
+								"'inputFHTRoom5ChildWithBedAge1TR')", 100);
+				
+					setTimeout("validatechildagetextbox('WoB'," +
+								"'inputFHTRoom5Adult'," +
+								"'inputFHTRoom5ChildWithBed'," +
+								"'inputFHTRoom5ChildWithOutBed'," +
+								"'inputFHTRoom5ChildWithOutBedAge'," +
+								"'inputFHTRoom5ChildWithOutBedAge'," +
+								"'inputFHTRoom5ChildWithOutBedAge1'," +
+								"'inputFHTRoom5ChildWithOutBedAge1TR')", 100);
+				
+					setTimeout("validateAdultwithChild('inputFHTRoom5Adult'," +
+								"'inputFHTRoom5ChildWithBed'," +
+								"'inputFHTRoom5ChildWithBedAge'," +
+								"'inputFHTRoom5ChildWithOutBed'," +
+								"'inputFHTRoom5ChildWithOutBedAge'," +
+								"'True')", 100);
+				</script>
+                                                
                                                 <div class="col-lg-12 col-md-12 col-xs-12">    
-                                                    <button type="button" class="btn btn-primary btn-style"><i class="fa fa-search lg"></i>بحث</button>
+                                                    <button type="button" class="btn btn-primary btn-style" onclick="javascript:qs_packageairflighthoteltour('http://search.asiatravel.com/package-search.aspx','packages.asiatravel.com/packagebooking/flight-hotels-tours.aspx','packages.asiatravel.com/PackageBooking/packages-list.aspx','inputFHTDepartureCity','inputFHTArrivalCity','inputFHTDepartureDate','inputFHTReturnDate','inputFHTRoomCount','inputFHTRoom1Adult','inputFHTRoom1ChildWithBed','inputFHTRoom1ChildWithBedAge','inputFHTRoom1ChildWithOutBed','inputFHTRoom1ChildWithOutBedAge','inputFHTRoom2Adult','inputFHTRoom2ChildWithBed','inputFHTRoom2ChildWithBedAge','inputFHTRoom2ChildWithOutBed','inputFHTRoom2ChildWithOutBedAge','inputFHTRoom3Adult','inputFHTRoom3ChildWithBed','inputFHTRoom3ChildWithBedAge','inputFHTRoom3ChildWithOutBed','inputFHTRoom3ChildWithOutBedAge','inputFHTRoom4Adult','inputFHTRoom4ChildWithBed','inputFHTRoom4ChildWithBedAge','inputFHTRoom4ChildWithOutBed','inputFHTRoom4ChildWithOutBedAge','inputFHTRoom5Adult','inputFHTRoom5ChildWithBed','inputFHTRoom5ChildWithBedAge','inputFHTRoom5ChildWithOutBed','inputFHTRoom5ChildWithOutBedAge','Departure City','Arrival City','11','','en-US');">
+                                                    <i class="fa fa-search lg"></i>بحث
+                                                    </button>
                                                 </div>
                                         </div>
                                     </div>
@@ -948,23 +1333,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <!--Flight + tab---> 
                 <div class="tab-pane fade in" id="flight-tab" >
                   
-                     <div class="row" style="margin-top: 20px;">
+                     <div class="row" style="margin-top: 20px;" id="qs-flight-hotel">
                              <div class="col-lg-6 col-md-6 col-xs-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="مدينة الانطلاق" />
+                                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                                    <input type="text" class="form-control ui-autocomplete-input" id="inputFHDepartureCity" placeholder="مدينة الانطلاق" autocomplete="off">
+            
                                 </div>
                              </div>
                              
                              <div class="col-lg-6 col-md-6 col-xs-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control"  placeholder="مدينة الوصول" />
+                                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                                    <input type="text" class="form-control ui-autocomplete-input" id="inputFHArrivalCity" placeholder="مدينة الوصول" autocomplete="off">
                                 </div>
                              </div>
                              
                              <div class="col-lg-6 col-md-6 col-xs-6">
                                 <div class="form-group">
                                 <div class="icon-addon addon-md">
-                                    <input type="text" class="form-control" id="inputFHArrivalCity"  placeholder="تاريخ الانطلاق" />
+                                    <input type="text" class="form-control" id="inputFHDepartureDate"  placeholder="تاريخ الانطلاق" />
                                     <label for="Check In" class="glyphicon glyphicon-calendar" title="Check In"></label>
                                 </div>    
                                 </div>
@@ -988,12 +1376,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                 <div class="col-lg-3 col-md-3 col-xs-3">
                                                     <h4 class="option-size">غرف</h4>
                                                         <div class="form-group">
-                                                            <select class="form-control">
-                                                                <option>1</option>
-                                                                <option>2</option>
-                                                                <option>3</option>
-                                                                <option>4</option>
-                                                                <option>5</option>
+                                                            <select class="form-control" id="inputFHRoomCount">
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
                                                             </select>
                                                         </div>
                                                 </div> 
@@ -1001,29 +1389,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                 <div class="col-lg-3 col-md-3 col-xs-3">
                                                     <h4 class="option-size">بالغ</h4>
                                                         <div class="form-group">
-                                                            <select class="form-control">
-                                                                <option>1</option>
-                                                                <option>2</option>
-                                                                <option>3</option>
-                                                                <option>4</option>
-                                                                <option>5</option>
-                                                            </select>
+                                                            <select class="form-control" id="inputFHRoom1Adult" onchange="validateAdultwithChild('inputFHRoom1Adult', 'inputFHRoom1ChildWithBed', 'inputFHRoom1ChildWithBedAge','inputFHRoom1ChildWithOutBed','inputFHRoom1ChildWithOutBedAge','True')">
+                                                                <option value="1">1</option>
+                                                                <option value="2" selected="">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                            </select> 
                                                         </div>
                                                 </div>
                                                 
                                                   <div class="col-lg-4 col-md-4 col-xs-4">
                                                     <h4 class="option-size">قاصر (٢-١١ سنة)</h4>
                                                         <div class="form-group">
-                                                            <select class="form-control" id="fwithBed">
-                                                                <option value="0">0 - مع سرير</option>
+                                                            <select class="form-control" id="inputFHRoom1ChildWithBed" onchange="validatechildagetextbox(
+                                                            'WB', 
+                                                            'inputFHRoom1Adult', 
+                                                            'inputFHRoom1ChildWithBed', 
+                                                            'inputFHRoom1ChildWithOutBed', 
+                                                            'inputFHRoom1ChildWithOutBedAge', 
+                                                            'inputFHRoom1ChildWithBedAge', 
+                                                            'inputFHRoom1ChildWithBedAge1', 
+                                                            'inputFHRoom1ChildWithBedAge1TR')">
+                                                                <option value="0" selected="">0 - مع سرير</option>
                                                                 <option value="1">1 - مع سرير</option>
-                                                               
-                                                            </select>
+                                                            </select>  
                                                        
-                                                            <select class="form-control" id="fwithoutBed">
-                                                                <option value="0">0 - بدون سرير</option>
-                                                                <option value="1">1 - بدون سرير</option>
-                                                               
+                                                            <select class="form-control" id="inputFHRoom1ChildWithOutBed" onchange="validatechildagetextbox(
+                                                            'WoB', 
+                                                            'inputFHRoom1Adult',
+                                                            'inputFHRoom1ChildWithBed', 
+                                                            'inputFHRoom1ChildWithOutBed', 
+                                                            'inputFHRoom1ChildWithOutBedAge',
+                                                            'inputFHRoom1ChildWithOutBedAge', 
+                                                            'inputFHRoom1ChildWithOutBedAge1', 
+                                                            'inputFHRoom1ChildWithOutBedAge1TR')">
+                                                                <option value="0" selected="">0 - مع سرير</option>
+                                                                <option value="1">1 - مع سرير</option>
                                                             </select>
                                                         </div>
                                                 </div>
@@ -1032,16 +1433,421 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                 
                                                     <h4 class="option-size">Age</h4>
                                                         <div class="form-group">
-                                                            <input type="text" id="fwithBedAge" disabled="" class="form-control" />
-                                                            <input type="text" id="fwithoutBedAge" disabled="" class="form-control" />
+                                                            <input type="text" class="form-control" id="inputFHRoom1ChildWithBedAge" disabled="">
+                                                            <input type="text" class="form-control hidden" id="inputFHRoom1ChildWithBedAge1">  
+                                                                                                                                                                                    
+                                                            <input type="text" class="form-control" id="inputFHRoom1ChildWithOutBedAge" disabled=""> 
+                                                            <input type="text" class="form-control hidden" id="inputFHRoom1ChildWithOutBedAge1">                                                            
                                                         </div>
                                                     
                                                 
                                                 
                                                 </div>
+                                                 <script type="text/javascript">
+					setTimeout("validatechildagetextbox('WB'," +
+								"'inputFHRoom1Adult'," +
+								"'inputFHRoom1ChildWithBed'," +
+								"'inputFHRoom1ChildWithOutBed'," +
+								"'inputFHRoom1ChildWithOutBedAge'," +
+								"'inputFHRoom1ChildWithBedAge'," +
+								"'inputFHRoom1ChildWithBedAge1'," +
+								"'inputFHRoom1ChildWithBedAge1TR')", 100);
+				
+					setTimeout("validatechildagetextbox('WoB'," +
+								"'inputFHRoom1Adult'," +
+								"'inputFHRoom1ChildWithBed'," +
+								"'inputFHRoom1ChildWithOutBed'," +
+								"'inputFHRoom1ChildWithOutBedAge'," +
+								"'inputFHRoom1ChildWithOutBedAge'," +
+								"'inputFHRoom1ChildWithOutBedAge1'," +
+								"'inputFHRoom1ChildWithOutBedAge1TR')", 100);
+				
+					setTimeout("validateAdultwithChild('inputFHRoom1Adult'," +
+								"'inputFHRoom1ChildWithBed'," +
+								"'inputFHRoom1ChildWithBedAge'," +
+								"'inputFHRoom1ChildWithOutBed'," +
+								"'inputFHRoom1ChildWithOutBedAge'," +
+								"'True')", 100);
+				</script>
+                
+                  <div class="row" id="FHRoom2" style="display:none">
+                    <div class="form-group col-lg-2 col-md-2">
+                        <label>&nbsp;</label>
+                    </div>
+                    <!-- Room 2 -->
+                    <div class="form-group col-lg-2 col-md-2">
+                        <h5>Room 2</h5>
+                    </div>
+                    <div class="form-group col-lg-2 col-md-2">
+                        <select class="form-control" id="inputFHRoom2Adult" onchange="validateAdultwithChild('inputFHRoom2Adult', 'inputFHRoom2ChildWithBed', 'inputFHRoom2ChildWithBedAge','inputFHRoom2ChildWithOutBed','inputFHRoom2ChildWithOutBedAge','True')">
+                            <option value="1">1</option>
+                            <option value="2" selected="">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>                                                  
+                    </div>
+                    <div class="form-group col-lg-4 col-md-4 col-xs-9">
+                        <label for="inputFHTRoom2ChildWithBed" class="visible-xs visible-sm">Child (2-11 yrs old)</label>
+                        <select class="form-control" id="inputFHRoom2ChildWithBed" onchange="validatechildagetextbox(
+                        'WB', 
+                        'inputFHRoom2Adult', 
+                        'inputFHRoom2ChildWithBed', 
+                        'inputFHRoom2ChildWithOutBed', 
+                        'inputFHRoom2ChildWithOutBedAge', 
+                        'inputFHRoom2ChildWithBedAge', 
+                        'inputFHRoom2ChildWithBedAge1', 
+                        'inputFHRoom2ChildWithBedAge1TR')">
+                            <option value="0" selected="">0 - with bed</option>
+                            <option value="1">1 - with bed</option>
+                        </select>    
+                   		<div class="clearfix visible-lg visible-md visible-xs visible-sm">&nbsp;</div>  
+                        <select class="form-control" id="inputFHRoom2ChildWithOutBed" onchange="validatechildagetextbox(
+                        'WoB', 
+                        'inputFHRoom2Adult',
+                        'inputFHRoom2ChildWithBed', 
+                        'inputFHRoom2ChildWithOutBed', 
+                        'inputFHRoom2ChildWithOutBedAge',
+                        'inputFHRoom2ChildWithOutBedAge', 
+                        'inputFHRoom2ChildWithOutBedAge1', 
+                        'inputFHRoom2ChildWithOutBedAge1TR')">
+                            <option value="0" selected="">0 - without bed</option>
+                            <option value="1">1 - without bed</option>
+                        </select>                                                  
+                      </div>
+                    <div class="form-group col-lg-2 col-md-2 col-xs-3">
+             
+                        <label for="inputFHRoom2ChildWithBedAge" class="visible-xs visible-sm">Age</label>
+                            <input type="text" class="form-control" id="inputFHRoom2ChildWithBedAge" disabled="">
+                                <div id="inputFHRoom2ChildWithBedAge1TR">
+                                    <input type="text" class="form-control hidden" id="inputFHRoom2ChildWithBedAge1">    
+                                </div>
+                            <div class="clearfix visible-lg visible-md visible-xs visible-sm">&nbsp;</div>  
+                            <input type="text" class="form-control" id="inputFHRoom2ChildWithOutBedAge" disabled=""> 
+                                <div id="inputFHRoom2ChildWithOutBedAge1TR" class="hidden">
+                                	<input type="text" class="form-control hidden" id="inputFHRoom2ChildWithOutBedAge1">   
+                       			</div>
+                  </div> 
+                  </div>
+				  
+				  <script type="text/javascript">
+					setTimeout("validatechildagetextbox('WB'," +
+								"'inputFHRoom2Adult'," +
+								"'inputFHRoom2ChildWithBed'," +
+								"'inputFHRoom2ChildWithOutBed'," +
+								"'inputFHRoom2ChildWithOutBedAge'," +
+								"'inputFHRoom2ChildWithBedAge'," +
+								"'inputFHRoom2ChildWithBedAge1'," +
+								"'inputFHRoom2ChildWithBedAge1TR')", 100);
+				
+					setTimeout("validatechildagetextbox('WoB'," +
+								"'inputFHRoom2Adult'," +
+								"'inputFHRoom2ChildWithBed'," +
+								"'inputFHRoom2ChildWithOutBed'," +
+								"'inputFHRoom2ChildWithOutBedAge'," +
+								"'inputFHRoom2ChildWithOutBedAge'," +
+								"'inputFHRoom2ChildWithOutBedAge1'," +
+								"'inputFHRoom2ChildWithOutBedAge1TR')", 100);
+				
+					setTimeout("validateAdultwithChild('inputFHRoom2Adult'," +
+								"'inputFHRoom2ChildWithBed'," +
+								"'inputFHRoom2ChildWithBedAge'," +
+								"'inputFHRoom2ChildWithOutBed'," +
+								"'inputFHRoom2ChildWithOutBedAge'," +
+								"'True')", 100);
+				</script>
+                
+                <div class="row" id="FHRoom3" style="display:none">
+                    <div class="form-group col-lg-2 col-md-2">
+                        <label>&nbsp;</label>
+                    </div>
+                    <!-- Room 3 -->
+                    <div class="form-group col-lg-2 col-md-2">
+                        
+                        <h5>Room 3</h5>
+                    </div>
+                    <div class="form-group col-lg-2 col-md-2">     
+                        <select class="form-control" id="inputFHRoom3Adult" onchange="validateAdultwithChild('inputFHRoom3Adult', 'inputFHRoom3ChildWithBed', 'inputFHRoom3ChildWithBedAge','inputFHRoom3ChildWithOutBed','inputFHRoom3ChildWithOutBedAge','True')">
+                            <option value="1">1</option>
+                            <option value="2" selected="">2</option>
+
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>                                                  
+                    </div>
+                    <div class="form-group col-lg-4 col-md-4 col-xs-9">
+                       	<label for="inputFHTRoom3ChildWithBed" class="visible-xs visible-sm">Child (2-11 yrs old)</label>
+                        <select class="form-control" id="inputFHRoom3ChildWithBed" onchange="validatechildagetextbox(
+                        'WB', 
+                        'inputFHRoom3Adult', 
+                        'inputFHRoom3ChildWithBed', 
+                        'inputFHRoom3ChildWithOutBed', 
+                        'inputFHRoom3ChildWithOutBedAge', 
+                        'inputFHRoom3ChildWithBedAge', 
+                        'inputFHRoom3ChildWithBedAge1', 
+                        'inputFHRoom3ChildWithBedAge1TR')">
+                            <option value="0" selected="">0 - with bed</option>
+                            <option value="1">1 - with bed</option>
+                        </select>    
+                   		<div class="clearfix visible-lg visible-md visible-xs visible-sm">&nbsp;</div>  
+                        <select class="form-control" id="inputFHRoom3ChildWithOutBed" onchange="validatechildagetextbox(
+                        'WoB', 
+                        'inputFHRoom3Adult',
+                        'inputFHRoom3ChildWithBed', 
+                        'inputFHRoom3ChildWithOutBed', 
+                        'inputFHRoom3ChildWithOutBedAge',
+                        'inputFHRoom3ChildWithOutBedAge', 
+                        'inputFHRoom3ChildWithOutBedAge1', 
+                        'inputFHRoom3ChildWithOutBedAge1TR')">
+                            <option value="0" selected="">0 - without bed</option>
+                            <option value="1">1 - without bed</option>
+                        </select>                                                  
+                      </div>
+                    <div class="form-group col-lg-2 col-md-2 col-xs-3">
+                   <label for="inputFHRoom3ChildWithBedAge" class="visible-xs visible-sm">Age</label>
+                    <input type="text" class="form-control" id="inputFHRoom3ChildWithBedAge" disabled="">
+                    <div id="inputFHRoom3ChildWithBedAge1TR">
+                        <input type="text" class="form-control hidden" id="inputFHRoom3ChildWithBedAge1">    
+                    </div>
+                    <div class="clearfix visible-lg visible-md visible-xs visible-sm">&nbsp;</div>  
+                    <input type="text" class="form-control" id="inputFHRoom3ChildWithOutBedAge" disabled=""> 
+                    <div id="inputFHRoom3ChildWithOutBedAge1TR" class="hidden">
+                        <input type="text" class="form-control hidden" id="inputFHRoom3ChildWithOutBedAge1">   
+                    </div>
+                  </div> 
+                  </div>
+				  <script type="text/javascript">
+					setTimeout("validatechildagetextbox('WB'," +
+								"'inputFHRoom3Adult'," +
+								"'inputFHRoom3ChildWithBed'," +
+								"'inputFHRoom3ChildWithOutBed'," +
+								"'inputFHRoom3ChildWithOutBedAge'," +
+								"'inputFHRoom3ChildWithBedAge'," +
+								"'inputFHRoom3ChildWithBedAge1'," +
+								"'inputFHRoom3ChildWithBedAge1TR')", 100);
+				
+					setTimeout("validatechildagetextbox('WoB'," +
+								"'inputFHRoom3Adult'," +
+								"'inputFHRoom3ChildWithBed'," +
+								"'inputFHRoom3ChildWithOutBed'," +
+								"'inputFHRoom3ChildWithOutBedAge'," +
+								"'inputFHRoom3ChildWithOutBedAge'," +
+								"'inputFHRoom3ChildWithOutBedAge1'," +
+								"'inputFHRoom3ChildWithOutBedAge1TR')", 100);
+				
+					setTimeout("validateAdultwithChild('inputFHRoom3Adult'," +
+								"'inputFHRoom3ChildWithBed'," +
+								"'inputFHRoom3ChildWithBedAge'," +
+								"'inputFHRoom3ChildWithOutBed'," +
+								"'inputFHRoom3ChildWithOutBedAge'," +
+								"'True')", 100);
+				</script>
+                  <div class="row" id="FHRoom4" style="display:none">
+                    <div class="form-group col-lg-2 col-md-2">
+                        <label>&nbsp;</label>
+                    </div>
+                    <!-- Room 4 -->
+                    <div class="form-group col-lg-2 col-md-2">
+                        <h5>Room 4</h5>
+                    </div>
+                    <div class="form-group col-lg-2 col-md-2">
+                        <select class="form-control" id="inputFHRoom4Adult" onchange="validateAdultwithChild('inputFHRoom4Adult', 'inputFHRoom4ChildWithBed', 'inputFHRoom4ChildWithBedAge','inputFHRoom4ChildWithOutBed','inputFHRoom4ChildWithOutBedAge','True')">
+                            <option value="1">1</option>
+                            <option value="2" selected="">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>                                                  
+                    </div>
+                    <div class="form-group col-lg-4 col-md-4 col-xs-9">
+                    	<label for="inputFHTRoom4ChildWithBed" class="visible-xs visible-sm">Child (2-11 yrs old)</label>
+                        <select class="form-control" id="inputFHRoom4ChildWithBed" onchange="validatechildagetextbox(
+                        'WB', 
+                        'inputFHRoom1Adult', 
+                        'inputFHRoom4ChildWithBed', 
+                        'inputFHRoom4ChildWithOutBed', 
+                        'inputFHRoom4ChildWithOutBedAge', 
+                        'inputFHRoom4ChildWithBedAge', 
+                        'inputFHRoom4ChildWithBedAge1', 
+                        'inputFHRoom4ChildWithBedAge1TR')">
+                            <option value="0" selected="">0 - with bed</option>
+                            <option value="1">1 - with bed</option>
+                        </select>    
+                   		<div class="clearfix visible-lg visible-md visible-xs visible-sm">&nbsp;</div>  
+                        <select class="form-control" id="inputFHRoom4ChildWithOutBed" onchange="validatechildagetextbox(
+                        'WoB', 
+                        'inputFHRoom4Adult',
+                        'inputFHRoom4ChildWithBed', 
+                        'inputFHRoom4ChildWithOutBed', 
+                        'inputFHRoom4ChildWithOutBedAge',
+                        'inputFHRoom4ChildWithOutBedAge', 
+                        'inputFHRoom4ChildWithOutBedAge1', 
+                        'inputFHRoom4ChildWithOutBedAge1TR')">
+                            <option value="0" selected="">0 - without bed</option>
+                            <option value="1">1 - without bed</option>
+                        </select>                                                  
+                      </div>
+                    <div class="form-group col-lg-2 col-md-2 col-xs-3">
+                    	<label for="inputFHRoom4ChildWithBedAge" class="visible-xs visible-sm">Age</label>
+                        <input type="text" class="form-control" id="inputFHRoom4ChildWithBedAge" disabled="">
+                    <div id="inputFHRoom4ChildWithBedAge1TR">
+                        <input type="text" class="form-control hidden" id="inputFHRoom4ChildWithBedAge1">    
+                    </div>
+                    <div class="clearfix visible-lg visible-md visible-xs visible-sm">&nbsp;</div>  
+                    <input type="text" class="form-control" id="inputFHRoom4ChildWithOutBedAge" disabled=""> 
+                    <div id="inputFHRoom4ChildWithOutBedAge1TR" class="hidden">
+                        <input type="text" class="form-control hidden" id="inputFHRoom4ChildWithOutBedAge1">   
+                    </div>
+                    </div> 
+                  </div>
+				  <script type="text/javascript">
+					setTimeout("validatechildagetextbox('WB'," +
+								"'inputFHRoom4Adult'," +
+								"'inputFHRoom4ChildWithBed'," +
+								"'inputFHRoom4ChildWithOutBed'," +
+								"'inputFHRoom4ChildWithOutBedAge'," +
+								"'inputFHRoom4ChildWithBedAge'," +
+								"'inputFHRoom4ChildWithBedAge1'," +
+								"'inputFHRoom4ChildWithBedAge1TR')", 100);
+				
+					setTimeout("validatechildagetextbox('WoB'," +
+								"'inputFHRoom4Adult'," +
+								"'inputFHRoom4ChildWithBed'," +
+								"'inputFHRoom4ChildWithOutBed'," +
+								"'inputFHRoom4ChildWithOutBedAge'," +
+								"'inputFHRoom4ChildWithOutBedAge'," +
+								"'inputFHRoom4ChildWithOutBedAge1'," +
+								"'inputFHRoom4ChildWithOutBedAge1TR')", 100);
+				
+					setTimeout("validateAdultwithChild('inputFHRoom4Adult'," +
+								"'inputFHRoom4ChildWithBed'," +
+								"'inputFHRoom4ChildWithBedAge'," +
+								"'inputFHRoom4ChildWithOutBed'," +
+								"'inputFHRoom4ChildWithOutBedAge'," +
+								"'True')", 100);
+				</script>
+                
+                  <div class="row" id="FHRoom5" style="display:none">
+                    <div class="form-group col-lg-2 col-md-2">
+                        <label>&nbsp;</label>
+                    </div>
+                    <!-- Room 5 -->
+                    <div class="form-group col-lg-2 col-md-2">
+                        <h5>Room 5</h5>
+                    </div>
+                    <div class="form-group col-lg-2 col-md-2">
+                        <select class="form-control" id="inputFHRoom5Adult" onchange="validateAdultwithChild('inputFHRoom5Adult', 'inputFHRoom5ChildWithBed', 'inputFHRoom5ChildWithBedAge','inputFHRoom5ChildWithOutBed','inputFHRoom5ChildWithOutBedAge','True')">
+                            <option value="1">1</option>
+                            <option value="2" selected="">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>                                                  
+                    </div>
+                    <div class="form-group col-lg-4 col-md-4 col-xs-9">
+                    	<label for="inputFHTRoom5ChildWithBed" class="visible-xs visible-sm">Child (2-11 yrs old)</label>
+                        <select class="form-control" id="inputFHRoom5ChildWithBed" onchange="validatechildagetextbox(
+                        'WB', 
+                        'inputFHRoom5Adult', 
+                        'inputFHRoom5ChildWithBed', 
+                        'inputFHRoom5ChildWithOutBed', 
+                        'inputFHRoom5ChildWithOutBedAge', 
+                        'inputFHRoom5ChildWithBedAge', 
+                        'inputFHRoom5ChildWithBedAge1', 
+                        'inputFHRoom5ChildWithBedAge1TR')">
+                            <option value="0" selected="">0 - with bed</option>
+                            <option value="1">1 - with bed</option>
+                        </select>    
+                        <div class="clearfix visible-lg visible-md visible-xs visible-sm">&nbsp;</div>  
+                        <select class="form-control" id="inputFHRoom5ChildWithOutBed" onchange="validatechildagetextbox(
+                        'WoB', 
+                        'inputFHRoom5Adult',
+                        'inputFHRoom5ChildWithBed', 
+                        'inputFHRoom5ChildWithOutBed', 
+                        'inputFHRoom5ChildWithOutBedAge',
+                        'inputFHRoom5ChildWithOutBedAge', 
+                        'inputFHRoom5ChildWithOutBedAge1', 
+                        'inputFHRoom5ChildWithOutBedAge1TR')">
+                            <option value="0" selected="">0 - without bed</option>
+                            <option value="1">1 - without bed</option>
+                        </select>                                                  
+                      </div>
+                    <div class="form-group col-lg-2 col-md-2 col-xs-3">
+                    	<label for="inputFHRoom5ChildWithBedAge" class="visible-xs visible-sm">Age</label>
+                        <input type="text" class="form-control" id="inputFHRoom5ChildWithBedAge" disabled="">
+                        <div id="inputFHRoom5ChildWithBedAge1TR">
+                            <input type="text" class="form-control hidden" id="inputFHRoom5ChildWithBedAge1">    
+                        </div>
+                        <div class="clearfix visible-lg visible-md visible-xs visible-sm">&nbsp;</div>  
+                        <input type="text" class="form-control" id="inputFHRoom5ChildWithOutBedAge" disabled=""> 
+                        <div id="inputFHRoom5ChildWithOutBedAge1TR" class="hidden">
+                            <input type="text" class="form-control hidden" id="inputFHRoom5ChildWithOutBedAge1">   
+                        </div>
+                    </div> 
+                  </div>
+                  
+                  <script type="text/javascript">
+					setTimeout("validatechildagetextbox('WB'," +
+								"'inputFHRoom5Adult'," +
+								"'inputFHRoom5ChildWithBed'," +
+								"'inputFHRoom5ChildWithOutBed'," +
+								"'inputFHRoom5ChildWithOutBedAge'," +
+								"'inputFHRoom5ChildWithBedAge'," +
+								"'inputFHRoom5ChildWithBedAge1'," +
+								"'inputFHRoom5ChildWithBedAge1TR')", 100);
+				
+					setTimeout("validatechildagetextbox('WoB'," +
+								"'inputFHRoom5Adult'," +
+								"'inputFHRoom5ChildWithBed'," +
+								"'inputFHRoom5ChildWithOutBed'," +
+								"'inputFHRoom5ChildWithOutBedAge'," +
+								"'inputFHRoom5ChildWithOutBedAge'," +
+								"'inputFHRoom5ChildWithOutBedAge1'," +
+								"'inputFHRoom5ChildWithOutBedAge1TR')", 100);
+				
+					setTimeout("validateAdultwithChild('inputFHRoom5Adult'," +
+								"'inputFHRoom5ChildWithBed'," +
+								"'inputFHRoom5ChildWithBedAge'," +
+								"'inputFHRoom5ChildWithOutBed'," +
+								"'inputFHRoom5ChildWithOutBedAge'," +
+								"'True')", 100);
+				</script>
                                                 
                                                 <div class="col-lg-12 col-md-12 col-xs-12">    
-                                                    <button type="button" class="btn btn-primary btn-style"><i class="fa fa-search lg"></i>بحث</button>
+                                                    <button type="button" class="btn btn-primary btn-style"onclick="javascript:qs_packageairflighthotel2('http://search.asiatravel.com/package-search.aspx',
+            'packages.asiatravel.com/packagebooking/flight-hotels.aspx?scode=XXX13180S9',
+            'packages.asiatravel.com/PackageBooking/search-landing.aspx',
+            'inputFHDepartureCity',
+            'inputFHArrivalCity',
+            'inputFHDepartureDate',
+            'inputFHReturnDate',
+            'inputFHRoomCount',
+            'inputFHRoom1Adult',
+            'inputFHRoom1ChildWithBed',
+            'inputFHRoom1ChildWithBedAge',
+            'inputFHRoom1ChildWithOutBed',
+            'inputFHRoom1ChildWithOutBedAge',
+            'inputFHRoom2Adult','inputFHRoom2ChildWithBed',
+            'inputFHRoom2ChildWithBedAge',
+            'inputFHRoom2ChildWithOutBed',
+            'inputFHRoom2ChildWithOutBedAge',
+            'inputFHRoom3Adult',
+            'inputFHRoom3ChildWithBed',
+            'inputFHRoom3ChildWithBedAge',
+            'inputFHRoom3ChildWithOutBed',
+            'inputFHRoom3ChildWithOutBedAge',
+            'inputFHRoom4Adult',
+            'inputFHRoom4ChildWithBed',
+            'inputFHRoom4ChildWithBedAge',
+            'inputFHRoom4ChildWithOutBed',
+            'inputFHRoom4ChildWithOutBedAge',
+            'inputFHRoom5Adult',
+            'inputFHRoom5ChildWithBed',
+            'inputFHRoom5ChildWithBedAge',
+            'inputFHRoom5ChildWithOutBed',
+            'inputFHRoom5ChildWithOutBedAge',
+            'Departure City',
+            'Arrival City',
+            '3',
+            '',
+            'ar-ae');"><i class="fa fa-search lg"></i>بحث</button>
                                                 </div>
                                         </div>
                                     </div>
@@ -1055,12 +1861,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                  <div class="tab-pane fade in" id="hoteltour-tab" >
               
                   <h4 class="option-size"  style="margin-top: 15px;">الوجهة</h4>
-                  <div class="row">
+                  <div class="row" id="qs-hotel-tours">
                   
                   
                    <div class="col-lg-12 col-md-12 col-xs-12">
                     <div class="form-group">
-                        <select class="form-control" id="inputTourKeyword2">
+                        <select class="form-control" id="inputHTKeyword">
                         <option value="0">اختيار الوجهة</option>
                         
                         <optgroup class="cnopt" name="AR" label="الارجنتين (Argentina)">
@@ -1483,7 +2289,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                    </div>
                     
                     <div class="col-lg-12 col-md-12 col-xs-12">
-                        <button type="button" class="btn btn-primary btn-style"><i class="fa fa-search lg"></i> بحث</button>
+                        <button type="button" class="btn btn-primary btn-style" onclick="javascript:qs_packageland2('http://packages.asiatravel.com/packagebooking/packages-list.aspx','inputHTKeyword','9','','ar-AE');"><i class="fa fa-search lg"></i> بحث</button>
                     
                     </div>
                     

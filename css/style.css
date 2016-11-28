@@ -451,7 +451,25 @@ ul#ui-id-3{
     z-index:9999; 
 }
 
-#ui-id-4.ul{
+ul#ui-id-4{
+    right:287px;
+    width: 400px;
+    height:auto;
+    max-height: 250px;
+    overflow:scroll;
+    z-index:9999; 
+}
+
+ul#ui-id-5{
+    position: absolute;
+    right:76px;
+    width: 400px;
+    height:auto;
+    max-height: 250px;
+    overflow:scroll;
+    z-index:9999;  
+}
+ul#ui-id-6{
     right:287px;
     width: 400px;
     height:auto;
@@ -459,8 +477,7 @@ ul#ui-id-3{
     overflow:scroll;
     z-index:9999; 
 }
-/*
-#ui-id-5{
+ul#ui-id-7{
     position: absolute;
     right:76px;
     width: 400px;
@@ -469,7 +486,6 @@ ul#ui-id-3{
     overflow:scroll;
     z-index:9999;  
 }
-*/
 
 
 /** Loading**/
