@@ -1,28 +1,26 @@
-body{
-    direction:rtl;
+.container{
+    width: 1200px;
 }
-.at-container{
-
-    margin-top: 10px;
-    margin-bottom:5px;
+body{
+    margin-top:20px;   
+    direction: rtl;
 }
 .at-social-media{
-    
+    float:left;
 }
+.header-width{
+    width:94%;
+    margin:auto;
+}
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width:100%;
+      height:345px;
+  }
 img.asiatravel-logo{
 margin:0px;
 padding:0px;
 }
-
-
-/*Navbar CSS **/
-
-i.lg{
-    font-size:19px;
-
-}
-
-
 i.social-icons{
     font-size:25px;
     padding:10px 15px;
@@ -41,11 +39,6 @@ i.lg{
     border: 0px;
     border-radius:0px;
     margin-bottom:0px;
-    padding-left:20px;
-    
-}
-ul.navbar-nav {
-    margin-right:-45px;
 }
 ul.navbar-nav li a:link{
     color:white;
@@ -77,21 +70,28 @@ ul.navbar-nav li.active-link{
     
 }
 
+.at-quicksearch{
+   
+}
+img.social-hover{
+    
+}
+img.social-hover:hover{
+    box-shadow: 0px 0px 5px #333;
+    border-radius:50%;
+}
 
 
-
-/*
-* Carousel
-* Carousel Position
-*/
-
-
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-     width:100%;
-      height:345px;
-  }
-
+.first-col{
+    width:166px;
+    float:left;
+    
+}
+.second-col{
+    float:left;
+    padding:20px 10px 10px 20px;
+    width:464px;
+}
 
 .at-quick-search .nav-pills > li > a {
 -webkit-border-radius: 0;
@@ -220,7 +220,7 @@ p.htl-room{
 .at-quick-search-pos{
     position:absolute;
     top:27px; 
-    right:70px;
+    right:41px;
 }
 .at-quick-search{
     position:relative;
@@ -244,10 +244,10 @@ p.htl-room{
 .spacing{
     margin:20px;
 }
-
-
-/**Kabayan Section**/
-
+.kabayan-stop-over{
+    width: 1200px;
+    margin: auto;
+}
 .kabayan-stop-over h1{
     color:#666;
     font-size: 30px;
@@ -258,7 +258,7 @@ p.htl-room{
 }
 
 .kabayan-bg{
-    background-image: url('http://www.asiatravel.net/common/media/images/homepage/ar-ae/bg-place.png');
+    background-image: url('../images/bg-place.png');
     background-size:100% 100%;
     background-repeat:no-repeat;
     color:white;
@@ -347,6 +347,9 @@ p.kabayan-stop-over-package-price{
     padding-top: 20px;
     padding-bottom:20px;
 }
+footer p{
+    font-size: 17px;
+}
 
 /*Hotels in United Arab Emirates*/
 .uae-hotels{
@@ -354,7 +357,10 @@ p.kabayan-stop-over-package-price{
     margin:0px;
     padding:0px
 }
-
+.uae-hotels-container{
+ width:1200px;
+ margin:auto;   
+}
 .uae-hotels-container h1{
     color: #666;
     padding-top:10px;
@@ -399,15 +405,6 @@ span.ui-datepicker-month, span.ui-datepicker-year {
 span.ui-icon-circle-triangle-w, span.ui-icon-circle-triangle-e{
   
 }
-
-
-/*Footer Section*/
-
-footer p{
-    font-size: 17px;
-}
-
-
 /*Footer Icon*/
 .footer-icon{
 	color: #fff;
@@ -429,9 +426,6 @@ footer p{
 	transform: scale(1.1);
 	box-shadow: 0px 0px 5px #000;
 }
-
-
-
 
 /*Quick Search Layout*/
 ul#ui-id-1{
@@ -525,17 +519,3 @@ ul#ui-id-7{
 .atctdgrplct{background:url(http://www.asiatravel.net/common/media/images/homepage/ar-ae/location.jpg)  no-repeat;
 }
 
-
-
-/*bootstrap override*/	
-.container{
-
-    }
-    @media (min-width:768px){
-        .container{width:750px}
-        }
-    @media (min-width:992px)
-    {.container{width:970px}
-    }
-    @media (min-width:1200px)
-    {.container{width:1200px}}
