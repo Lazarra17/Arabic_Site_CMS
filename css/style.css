@@ -1,3 +1,15 @@
+/**
+* Arabic Site CSS 2016-08-17
+* Copyright (C) 2010 www.asiatravel.com. All rights reserved.
+*/
+
+/**
+ * www.asiatravel.com General CSS Style (Arabic)
+ *
+ * @author	: Chad Nico Lazarra <dubaiweb4@asiatravel.com>
+ * @version    	: 1.0
+ */
+
 body{
     direction:rtl;
 }
@@ -47,39 +59,28 @@ i.lg{
 ul.navbar-nav {
     margin-right:-45px;
 }
-ul.navbar-nav li a:link{
+ul.navbar-nav li a:link,ul.navbar-nav li a:visited{
     color:white;
     font-size: 17px;
+    padding-top:15px;
+    padding-bottom:15px;
+    height:50px;
 }
-ul.navbar-nav li a:visited {
-    color:white;
-    font-size: 17px;
-}
-ul.navbar-nav li a:hover {
-    color:white !important;
-  
-}
-ul.navbar-nav li:hover{
-   background-color:#0d71a1; 
-   
-}
-ul.navbar-nav li.active-link{
-    background-color:#076b9c;
-}
-.navbar-default .navbar-toggle .icon-bar{
-    background-color:white;
-}
-.navbar-default .navbar-toggle:hover {
-    background-color:#076b9c;
-}
+
+
+
 .text-white{
     color:white; 
     
 }
+.navbar-default .navbar-nav{
+   
+}
+/**Csutomized LAyout Navbar*/
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+background-color: #0d71a1;  /*Sets the text hover color on navbar*/
 
-
-
-
+}
 /*
 * Carousel
 * Carousel Position
@@ -227,8 +228,18 @@ p.htl-room{
     background-color:white;
     padding:0 20px 20px 0px;
     border: 1px solid #f1f1f1;
+    width:670px;    
     z-index:9999;
     
+}
+@media only screen and (max-width:960px){    
+    .at-quick-search{
+        width:100%;
+    }
+    .at-quick-search-pos{
+    position: absolute;
+        right: 0px;
+}
 }
 .option-size{
     font-size: 14px;
@@ -245,92 +256,52 @@ p.htl-room{
     margin:20px;
 }
 
+/**Customized Quick Search Background */
 
-/**Kabayan Section**/
-
-.kabayan-stop-over h1{
-    color:#666;
-    font-size: 30px;
-    padding-right:0px;
-    margin-right:0px;
-    padding-top:5px;
- 
+.nav-pills > li.active > a {
+    background-color:#0d71a1 !important;
+}
+.nav-pills>li.active>a:hover {
+    background-color:#0d71a1 !important;
 }
 
-.kabayan-bg{
-    background-image: url('http://www.asiatravel.net/common/media/images/homepage/ar-ae/bg-place.png');
-    background-size:100% 100%;
-    background-repeat:no-repeat;
-    color:white;
-    padding-left:10px;
-    min-height: 48px;
-
-}
-p.rate-from{
-    padding:0px;
-  margin:0px;  
-}
-h4.rate-from-price{
-  color:red;
-  margin:0px;  
-  font-weight:bold;
-}
-h4.country{
-   
-    font-weight:bold;
-    padding: 3px 0px 3px 15px;
-    text-align:left;
-}
-h4.country2{
-   
-    font-weight:bold;
-    margin:0px;
-    padding:5px 0 0px 15px;
-    text-align:left;
-}
-p.inclusions{
-    margin:2px;
-    margin-left:0px;
-    
-}
-h4.inclusions{
-    color:red;
-}
-.text-green{
-    color:green;
-}
-.kabayan-bg-orange{
-    background-color:orange;
-    color:white;
-}
-.kabayan-bg-orange h2{
-    margin:0px;
-    margin-top: 10px;
-    text-align:center;
-    background-color: black;
-    font-size:25px;
-    padding: 5px 3px 5px 3px;
-}
-.kabayan-bg-orange p{
-    margin-top:5px;
-}
-p.kabayan-stop-over-package-price{
-    background-color: #2e3192;
-    font-weight: bold;
-    font-size:15px;
-    padding: 5px 25px 5px 25px;
-    margin:0px;
-    text-align:center;
-}
-.text-bold{
-    font-weight:bold;
-    font-size:15px;
-}
-.kabayan-stop-over-package-per-person{
+/**Tours and Attractions Layout**/
+.bg-transparent{
+    position: absolute;
+    bottom: 43px;
+    left:10px;
+    right:10px;
     background-color:black;
-    padding:5px 15px 5px 15px;
-  
+    opacity: .6;
+    height: 40px;
 }
+.hotel-tour-name h3{
+    position: absolute;
+    bottom: 40px;
+    left:10px;
+    right:10px;
+    text-align: center;
+}
+.hotel-tour-name a, a.special-tour-text{
+    color:white;
+}
+.hotel-tour-name a:hover, a.special-tour-text:hover{
+    text-decoration: underline;
+}
+
+/*Special Tours Layout**/
+p.special-tours-text{
+    color:white;
+    text-align: center;
+    font-size: 16px;
+    margin:0px;
+    background: url(http://www.asiatravel.net/common/media/images/homepage/ar-ae/bg-special-tours.png) repeat-x;
+    position: absolute;
+    bottom:-2px;
+    left:10px;
+    right:10px;
+}
+
 .space-top{
     margin:20px;
 }
@@ -363,12 +334,12 @@ p.kabayan-stop-over-package-price{
 }
 .hotel-container{
     border: 1px solid #ddd;
-}
+    }
 .hotel-container h4{
     margin:0px;
-    padding:3px 5px;
+    padding:5px 5px 3px 5px;
     color:#666;
-    font-size:150%;
+    font-size:130%;
 }
 .hotel-container span.glyphicon-star, span.glyphicon-star-empty{
     color:#f5bc0d;
@@ -376,20 +347,105 @@ p.kabayan-stop-over-package-price{
 }
 .hotel-price{
     font-weight:normal;
-    font-size:17px;
+    font-size:15px;
 }
 .hotel-price-color{
     color:#f3a704;
+    font-size:15px;
 }
+
 h4.more-uae-hotel{
     text-align:center;
 }
+h1.hotel-title{
+    margin-top:30px;
+    font-size: 28px;
+    border-bottom: 1px solid #bbb;
+}
+h1.hotel-title-mideast{
+    margin-top:0px;
+    font-size: 28px;
+    border-bottom: 1px solid #bbb;
+    color:#555;
+}
+.star-rating {
+    font-size: 17px;   
+}
+
 
 /* Special Promotion CSS Style*/
 
 img.special-promotion{
     margin-bottom:5px;
 }
+
+
+
+/*About Us Style*/
+.margin-top {
+    margin-top: 10px;
+}
+.margin-top-bottom{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.margin-bottom{
+    margin-bottom:25px;
+}
+.about-us-p{
+    color:#444;
+    font-size: 105%;
+}
+.about-us-sub{
+    color:#d9534f;
+}
+.about-us-title{
+    border-bottom: 1px solid #AAA;
+}
+
+/*Hotel Partner*/
+.hotel-partner-sub{
+    color:dodgerblue;
+    font-weight: bold;
+  
+}
+.hotel-partner-registration{
+    border: 1px solid cornflowerblue;
+    margin-bottom:10px;
+}
+
+h4.hotel-partner-registration-title{
+    color: #FFF;
+}
+.hotel-partner-registration-bg{
+    background-color:cornflowerblue;
+}
+.font-normal{
+    font-weight: normal;
+    margin-bottom:10px;
+}
+.bg-cornflower{
+    background-color: cornflowerblue;
+}
+.hotel-partner-p{
+    color:salmon;
+    margin:0px;
+    padding:0px;
+}
+.text-red{
+    color:red;
+}
+
+
+/*Subsribe page  -  Success*/
+.subscribe-bg{
+    background-color: darkorange;
+}
+.subscribe-message{
+    font-size: 25px;
+    color:white;
+}
+
 
 /*Date Picker Style*/
 
@@ -539,3 +595,5 @@ ul#ui-id-7{
     }
     @media (min-width:1200px)
     {.container{width:1200px}}
+
+

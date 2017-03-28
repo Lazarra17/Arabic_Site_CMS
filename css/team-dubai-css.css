@@ -1,0 +1,565 @@
+body{
+    direction:rtl;
+}
+.at-container{
+
+    margin-top: 10px;
+    margin-bottom:5px;
+}
+.at-social-media{
+    
+}
+img.asiatravel-logo{
+margin:0px;
+padding:0px;
+}
+
+
+/*Navbar CSS **/
+
+i.lg{
+    font-size:19px;
+
+}
+
+
+i.social-icons{
+    font-size:25px;
+    padding:10px 15px;
+    background-repeat:no-repeat;
+    background-image:url(../images/social-icon-bg.png);
+    color:white;
+    margin:0px;
+}
+i.lg{
+    font-size:19px;
+
+}
+.navbar{
+    margin-top:5px;
+    background-color:#0a85c1;
+    border: 0px;
+    border-radius:0px;
+    margin-bottom:0px;
+    padding-left:20px;
+    
+}
+ul.navbar-nav {
+    margin-right:-45px;
+}
+ul.navbar-nav li a:link,ul.navbar-nav li a:visited{
+    color:white;
+    font-size: 17px;
+    padding-top:15px;
+    padding-bottom:15px;
+    height:50px;
+}
+
+
+
+.text-white{
+    color:white; 
+    
+}
+.navbar-default .navbar-nav{
+   
+}
+/**Csutomized LAyout Navbar*/
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+background-color: #0d71a1;  /*Sets the text hover color on navbar*/
+
+}
+/*
+* Carousel
+* Carousel Position
+*/
+
+
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+     width:100%;
+      height:345px;
+  }
+
+
+.at-quick-search .nav-pills > li > a {
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+margin-bottom:-2px;
+height:52px;
+
+}
+
+i.sizebig{
+    font-size: 30px;
+    float:left;
+     
+}
+i.home{
+    font-size:25px;
+}
+.glyphicon{
+    font-size:30px;
+    float:left;
+}
+
+
+.input-group .icon-addon .form-control {
+    border-radius: 0;
+}
+
+.icon-addon {
+    position: relative;
+    color: #555;
+    display: block;
+}
+
+.icon-addon:after,
+.icon-addon:before {
+    display: table;
+    content: " ";
+}
+
+.icon-addon:after {
+    clear: both;
+}
+
+.icon-addon.addon-md .glyphicon,
+.icon-addon .glyphicon, 
+.icon-addon.addon-md .fa,
+.icon-addon .fa {
+    position: absolute;
+    z-index: 2;
+    left: 10px;
+    font-size: 14px;
+    width: 20px;
+    margin-left: -2.5px;
+    text-align: center;
+    padding: 10px 0;
+    top: 1px
+}
+
+.icon-addon.addon-lg .form-control {
+    line-height: 1.33;
+    height: 46px;
+    font-size: 18px;
+    padding: 10px 16px 10px 40px;
+}
+
+.icon-addon.addon-sm .form-control {
+    height: 30px;
+    padding: 5px 10px 5px 28px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.icon-addon.addon-lg .fa,
+.icon-addon.addon-lg .glyphicon {
+    font-size: 18px;
+    margin-left: 0;
+    left: 11px;
+    top: 4px;
+}
+
+.icon-addon.addon-md .form-control,
+.icon-addon .form-control {
+    padding-left: 30px;
+    float: left;
+    font-weight: normal;
+}
+
+.icon-addon.addon-sm .fa,
+.icon-addon.addon-sm .glyphicon {
+    margin-left: 0;
+    font-size: 12px;
+    left: 5px;
+    top: -1px
+}
+
+.icon-addon .form-control:focus + .glyphicon,
+.icon-addon:hover .glyphicon,
+.icon-addon .form-control:focus + .fa,
+.icon-addon:hover .fa {
+    color: #2580db;
+}
+ul.flight-menu li {
+    display:inline;
+    border-radius: 3px;
+    border: 1px solid #a1a1a1;
+}
+
+
+.btn-style{
+    width: 100%;border:0px;padding:7px;border-radius:3px;
+    
+}
+
+.btn-group button{
+    background-color: #f5f5f5;
+}
+
+
+
+p.htl-room{
+    margin:0px;
+    padding:0px;
+    
+}
+.at-quick-search-pos{
+    position:absolute;
+    top:27px; 
+    right:70px;
+}
+.at-quick-search{
+    position:relative;
+    background-color:white;
+    padding:0 20px 20px 0px;
+    border: 1px solid #f1f1f1;
+    width:670px;    
+    z-index:9999;
+    
+}
+.option-size{
+    font-size: 14px;
+    font-weight:bold;
+    color: #666;
+    margin-top:0px;
+}
+.hidden-space{
+    visibility:hidden;
+    
+}
+
+.spacing{
+    margin:20px;
+}
+
+/**Customized Quick Search Background */
+
+.nav-pills > li.active > a {
+    background-color:#0d71a1 !important;
+}
+.nav-pills>li.active>a:hover {
+    background-color:#0d71a1 !important;
+}
+
+/**Kabayan Section**/
+
+.kabayan-stop-over h1{
+    color:#666;
+    font-size: 30px;
+    padding-right:0px;
+    margin-right:0px;
+    padding-top:5px;
+ 
+}
+
+.kabayan-bg{
+    background-image: url('http://www.asiatravel.net/common/media/images/homepage/ar-ae/bg-place.png');
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    color:white;
+    padding-left:10px;
+    min-height: 48px;
+
+}
+p.rate-from{
+    padding:0px;
+  margin:0px;  
+}
+h4.rate-from-price{
+  color:red;
+  margin:0px;  
+  font-weight:bold;
+}
+h4.country{
+   
+    font-weight:bold;
+    padding: 3px 0px 3px 15px;
+    text-align:left;
+}
+h4.country2{
+   
+    font-weight:bold;
+    margin:0px;
+    padding:5px 0 0px 15px;
+    text-align:left;
+}
+p.inclusions{
+    margin:2px;
+    margin-left:0px;
+    
+}
+h4.inclusions{
+    color:red;
+}
+.text-green{
+    color:green;
+}
+.kabayan-bg-orange{
+    background-color:orange;
+    color:white;
+}
+.kabayan-bg-orange h2{
+    margin:0px;
+    margin-top: 10px;
+    text-align:center;
+    background-color: black;
+    font-size:25px;
+    padding: 5px 3px 5px 3px;
+}
+.kabayan-bg-orange p{
+    margin-top:5px;
+}
+p.kabayan-stop-over-package-price{
+    background-color: #2e3192;
+    font-weight: bold;
+    font-size:15px;
+    padding: 5px 25px 5px 25px;
+    margin:0px;
+    text-align:center;
+}
+.text-bold{
+    font-weight:bold;
+    font-size:15px;
+}
+.kabayan-stop-over-package-per-person{
+    background-color:black;
+    padding:5px 15px 5px 15px;
+  
+}
+.space-top{
+    margin:20px;
+}
+
+.at-location h4{
+    color:#6495ed;
+    margin:4px;
+}
+.at-subscribe h4{
+    color: red;
+}
+.at-subscribe-bg{
+    background-color:#f1f1f1;
+    padding-top: 20px;
+    padding-bottom:20px;
+}
+
+/*Hotels in United Arab Emirates*/
+.uae-hotels{
+    float:right;
+    margin:0px;
+    padding:0px
+}
+
+.uae-hotels-container h1{
+    color: #666;
+    padding-top:10px;
+    font-size: 30px;
+    text-align:right;
+}
+.hotel-container{
+    border: 1px solid #ddd;
+}
+.hotel-container h4{
+    margin:0px;
+    padding:3px 5px;
+    color:#666;
+    font-size:150%;
+}
+.hotel-container span.glyphicon-star, span.glyphicon-star-empty{
+    color:#f5bc0d;
+    font-size: 20px;
+}
+.hotel-price{
+    font-weight:normal;
+    font-size:17px;
+}
+.hotel-price-color{
+    color:#f3a704;
+}
+h4.more-uae-hotel{
+    text-align:center;
+}
+h1.hotel-title{
+    margin-top:30px;
+
+}
+
+/* Special Promotion CSS Style*/
+
+img.special-promotion{
+    margin-bottom:5px;
+}
+
+/*Date Picker Style*/
+
+span.ui-datepicker-month, span.ui-datepicker-year {
+    color:white;
+}
+span.ui-icon-circle-triangle-w, span.ui-icon-circle-triangle-e{
+  
+}
+
+
+/*Footer Section*/
+
+footer p{
+    font-size: 17px;
+}
+
+
+/*Footer Icon*/
+.footer-icon{
+	color: #fff;
+	border-radius: 50%;
+	background: orange;
+	line-height: 5px;
+	font-size: 1.5em;
+	width: 43px;
+	height: 43px;
+	display: inline-block;
+	padding: 10px;
+	transition: all 0.5s;
+    text-align: center;
+    }
+
+.footer-icon:hover{
+	color: #fff;
+	-webkit-transform: scale(1.1); /* Safari */
+	transform: scale(1.1);
+	box-shadow: 0px 0px 5px #000;
+}
+
+
+
+
+/*Quick Search Layout*/
+ul#ui-id-1{
+    position: absolute;
+    right:76px;
+    width: 700px;
+    height: 300px;
+    overflow:scroll;
+    z-index:9999; 
+}
+ul#ui-id-2{
+    width: 280px;
+    height: 250px;
+    overflow:scroll;
+    z-index:9999; 
+}
+ul#ui-id-3{
+    position: absolute;
+    right:76px;
+    width: 280px;
+    height: 250px;
+    overflow:scroll;
+    z-index:9999; 
+}
+
+ul#ui-id-4{
+    right:287px;
+    width: 400px;
+    height:auto;
+    max-height: 250px;
+    overflow:scroll;
+    z-index:9999; 
+}
+
+ul#ui-id-5{
+    position: absolute;
+    right:76px;
+    width: 400px;
+    height:auto;
+    max-height: 250px;
+    overflow:scroll;
+    z-index:9999;  
+}
+ul#ui-id-6{
+    right:287px;
+    width: 400px;
+    height:auto;
+    max-height: 500px;
+    overflow:scroll;
+    z-index:9999; 
+}
+ul#ui-id-7{
+    position: absolute;
+    right:76px;
+    width: 400px;
+    height:auto;
+    max-height: 500px;
+    overflow:scroll;
+    z-index:9999;  
+}
+
+
+/** Loading**/
+
+.atctbl{width:100%}
+.atctdlbl{text-align:right}
+.atctdlbleng{text-align:left}
+.atctdspc{width:5px}
+
+.atctdgrp,.atctdgrpctn,.atctdgrpcty,.atctdgrphtl,.atctdgrplct{text-align:right;font-size:11px;padding-left:20px;width:10px}
+
+
+.ui-autocomplete-loading{
+    background: url(http://www.asiatravel.net/common/media/images/homepage/ar-ae/loading16.gif) no-repeat left;    
+}
+
+.atctdgrpcty{
+    background:url(http://www.asiatravel.net/common/media/images/homepage/ar-ae/city.jpg)  no-repeat;
+}
+
+.atctdgrpctn{
+    background:url(http://www.asiatravel.net/common/media/images/homepage/ar-ae/country.jpg)  no-repeat;
+}
+
+.atctdgrphtl{
+    background:url(http://www.asiatravel.net/common/media/images/homepage/ar-ae/hotel.jpg)  no-repeat center left;
+
+
+}
+
+.atctdgrplct{background:url(http://www.asiatravel.net/common/media/images/homepage/ar-ae/location.jpg)  no-repeat;
+}
+
+
+
+/*bootstrap override*/	
+.container{
+
+    }
+    @media (min-width:768px){
+        .container{width:750px}
+        }
+    @media (min-width:992px)
+    {.container{width:970px}
+    }
+    @media (min-width:1200px)
+    {.container{width:1200px}}
+.team-dubai {
+    font-size: 28px;
+    color: #555;
+}
+
+.hide-extra {
+    overflow: hid
+}
+
+.dubai-character {
+    overflow: hidden;
+    height: 410px;
+    width: 270px;
+}
+
+.dxb-member {
+    margin:0px;
+}
+
+.margin-top {
+    margin-top: 5px;
+}
